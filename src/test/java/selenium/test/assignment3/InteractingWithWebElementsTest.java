@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 
-public class InteractingWithWebElements {
+public class InteractingWithWebElementsTest {
     public static void main(String[] args) throws InterruptedException {
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver=new FirefoxDriver();

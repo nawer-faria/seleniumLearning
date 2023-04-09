@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 
-public record WorkingWithSelectListElements() {
+public record WorkingWithSelectListElementsTest() {
     public static void main(String[] args) throws InterruptedException {
 
         WebDriverManager.firefoxdriver().setup();

@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 
-public class InformationAboutWebElements {
+public class InformationAboutWebElementsTest {
     public static void main(String[] args) throws InterruptedException {
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
@@ -22,7 +22,7 @@ public class InformationAboutWebElements {
 
         // .getText() --> Fetches the rendered text of the reference element
         WebElement copyRightText = driver.findElement(By.cssSelector(".copyright a[href*='javascript:']"));
-        System.out.println("The test is: " + copyRightText.getText().trim());
+        System.out.println("The text is: " + copyRightText.getText().trim());
 
         WebElement userName = driver.findElement(By.cssSelector("input[id*='username_']"));
         userName.clear();
@@ -45,7 +45,9 @@ public class InformationAboutWebElements {
         System.out.println("The position is: " + password.getRect().x + "   " + password.getRect().y);
 
         // .getCssValue() --> Get the value of specified style property of reference element
-        System.out.println("The css value os color is: " + password.getCssValue("color").trim());
+        System.out.println("The css value of color is: " + password.getCssValue("color").trim());
+        System.out.println("The css value of font size is: " + password.getCssValue("font-size").trim());
+        System.out.println("The css value of width is: " + password.getCssValue("width").trim());
 
         driver.findElement(By.cssSelector("button[class$='btn-primary']")).click();
 

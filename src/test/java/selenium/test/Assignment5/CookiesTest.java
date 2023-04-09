@@ -1,4 +1,4 @@
-package selenium.test;
+package selenium.test.Assignment5;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Cookie;
@@ -15,12 +15,6 @@ public class CookiesTest {
         driver.get("https://demoqa.com");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-
-//        Add Cookie
-//        Get Named Cookie
-//        Get All Cookies: for each loop
-//        Delete Cookie
-//        Delete All Cookies
 
         // Add Cookie
         driver.manage().addCookie(new Cookie("User","00016952"));
