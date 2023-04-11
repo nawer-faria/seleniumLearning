@@ -1,4 +1,4 @@
-package selenium.test.Assignment5;
+package selenium.test.assignment5;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.time.Duration;
 
 public class WorkingWithIFramesAndFramesTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
         driver.get("https://demoqa.com/frames");
@@ -16,10 +16,12 @@ public class WorkingWithIFramesAndFramesTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 
         System.out.println(driver.findElement(By.id("framesWrapper")).getText());
+        Thread.sleep(3000);
         driver.switchTo().frame("frame1");
         System.out.println(driver.findElement(By.id("sampleHeading")).getText());
         driver.switchTo().defaultContent();
         System.out.println(driver.findElement(By.id("framesWrapper")).getText());
+        Thread.sleep(3000);
 
         driver.switchTo().frame(1);
         System.out.println(driver.findElement(By.id("sampleHeading")).getText());

@@ -32,8 +32,8 @@ public class PrintAllUrlOfAWebPageUsingFindElementsTest {
 
         if (linkList.size() != 0) {
             for (WebElement webElement : linkList) {
-                String linkValue = webElement.getAttribute("href").trim(); //.trim() trims space if any at the begaining or end of the link
-                if (linkValue != null && !linkValue.isEmpty()) {
+                String linkValue = webElement.getAttribute("href"); //.trim() trims space if any at the begaining or end of the link
+                if (linkValue != null && !linkValue.isEmpty() && !linkValue.equals("")) {
                     System.out.println(linkValue);
                 }
             }
