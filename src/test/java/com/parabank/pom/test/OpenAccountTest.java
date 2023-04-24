@@ -19,7 +19,6 @@ public class OpenAccountTest extends BaseParaBankTest {
     @Test
     public void openNewAccountShouldSucceed(){
 //        loginPage= new LoginPage();
-//
 //        homePage=loginPage
 //                .fillUsername(getUsername())
 //                .fillPassword(getPassword())

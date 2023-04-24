@@ -19,11 +19,11 @@ public abstract class BaseParaBankTest {
     public static WebDriver driver;
 
     public BaseParaBankTest() {
-        String filePath = System.getProperty("user.dir") + "/src/test/resources/config.properties";
-        properties = new Properties();
         try {
-            FileInputStream fileInputStream = new FileInputStream(filePath);
-            properties.load(fileInputStream);
+            String filePath = System.getProperty("user.dir") + "/src/test/resources/config.properties";
+            properties = new Properties();
+            FileInputStream inputStream = new FileInputStream(filePath);
+            properties.load(inputStream);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
@@ -35,15 +35,19 @@ public abstract class BaseParaBankTest {
     public void browserLaunch() {
         String browserName = getBrowserName();
         if (browserName.equals("firefox")) {
+            //Firefox logging disable
+            System.getProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         } else if (browserName.equals("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         } else {
+//            Headless Browser
             WebDriverManager.firefoxdriver().setup();
             FirefoxOptions firefoxOptions = new FirefoxOptions();
-            firefoxOptions.setHeadless(true);
+//            firefoxOptions.setHeadless(true);
+            firefoxOptions.addArguments("-headless");
             driver = new FirefoxDriver(firefoxOptions);
         }
         driver.get(getBaseUrl());
@@ -64,11 +68,11 @@ public abstract class BaseParaBankTest {
     }
 
     public String getBrowserName() {
-        return properties.getProperty("firefox");
+        return properties.getProperty("browserName");
     }
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }

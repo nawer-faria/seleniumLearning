@@ -19,6 +19,12 @@ dependencies {
     // https://mvnrepository.com/artifact/org.testng/testng
     testImplementation 'org.testng:testng:7.7.1'
 
+    //Dummy Text
+    testImplementation 'com.thedeanda:lorem:2.1'
+
+    //Write properties files
+    testImplementation 'org.apache.commons:commons-configuration2:2.7'
+
 }
 
 test {
