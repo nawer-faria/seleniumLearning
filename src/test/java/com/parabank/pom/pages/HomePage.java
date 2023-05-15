@@ -67,7 +67,7 @@ public class HomePage extends BaseParaBankTest {
         return new BillPayPage();
     }
 
-    public FindTransactionsPage clickFundTransferLink(){
+    public FindTransactionsPage clickFindTransactionsLink(){
         findTransactionsLink.isDisplayed();
         findTransactionsLink.click();
         return new FindTransactionsPage();

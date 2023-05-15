@@ -79,10 +79,10 @@ public class FindTransactionsPage extends BaseParaBankTest {
         return this;
     }
 
-    public FindTransactionsPage fillAmount(String amount){
+    public FindTransactionsPage fillAmount(int amount){
         findByAmountEl.isDisplayed();
         findByAmountEl.clear();
-        findByAmountEl.sendKeys(amount);
+        findByAmountEl.sendKeys(String.valueOf(amount));
         return this;
     }
 
