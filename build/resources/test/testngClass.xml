@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="TestNGLearning">
+<classes>
+    <class name="testNg.withPriority.ParaBankWithPriorityTest"></class>
+    <class name="testNg.withoutpriority.ParaBankWithoutPriorityTest"></class>
+</classes>
+    </test>
+</suite>
